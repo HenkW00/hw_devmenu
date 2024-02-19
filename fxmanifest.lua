@@ -2,10 +2,9 @@ fx_version 'cerulean'
 
 game "gta5"
 
-author "Project Sloth & OK1ez"
-version '1.0.3'
+author "HenkW"
+version '1.0.5'
 description 'Admin Menu'
-repository 'https://github.com/Project-Sloth/hw_devmenumenu'
 
 lua54 'yes'
 
