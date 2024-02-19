@@ -3,7 +3,7 @@ fx_version 'cerulean'
 game "gta5"
 
 author "HenkW"
-version '1.0.6'
+version '1.0.7'
 description 'Admin Dev Menu'
 
 lua54 'yes'

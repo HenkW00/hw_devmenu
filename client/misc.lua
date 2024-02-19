@@ -24,12 +24,6 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleGodmode', function(data)
     end
 end)
 
--- Cuff/Uncuff
-RegisterNetEvent('hw_devmenumenu:client:ToggleCuffs', function(player)
-    local target = GetPlayerServerId(player)
-    TriggerEvent("police:client:GetCuffed", target)
-end)
-
 -- Copy Coordinates
 local function CopyCoords(data)
     local coords = GetEntityCoords(cache.ped)

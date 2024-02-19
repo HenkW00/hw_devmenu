@@ -46,10 +46,7 @@
 - Teleport to Coordinates
 - Teleport to Marker
 - Teleport to player
-- Toggle Blips
 - Toggle Coords
-- Toggle Cuffs
-- Toggle Names
 - Vehicle Dev Menu
 - Warn player
 

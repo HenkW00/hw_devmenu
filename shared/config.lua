@@ -360,29 +360,6 @@ Config.Actions = {
         perms = "admin",
     },
 
-    ["toggle_blips"] = {
-        label = "Toggle Blips",
-        type = "client",
-        event = "hw_devmenumenu:client:toggleBlips",
-        perms = "admin",
-    },
-
-    ["toggle_names"] = {
-        label = "Toggle Names",
-        type = "client",
-        event = "hw_devmenumenu:client:toggleNames",
-        perms = "admin",
-    },
-
-    ["toggle_cuffs"] = {
-        label = "Toggle Cuffs",
-        perms = "admin",
-        dropdown = {
-            { label = "Player", option = "dropdown", data = "players" },
-            { label = "Confirm", option = "button", type = "server", event = "hw_devmenumenu:server:CuffPlayer" },
-        },
-    },
-
     ["max_mods"] = {
         label = "Max Vehicle Mods",
         type = "client",

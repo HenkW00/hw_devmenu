@@ -15,8 +15,6 @@
     "amount_max": "Max Input is 999.999$",
     "not_in_vehicle": "Your not in a Vehicle",
     "no_free_seats": "The vehicle has no free seats!",
-    "blips_deactivated": "Blips deactivated",
-    "names_deactivated": "Names deactivated",
     "cant_spectate_yourself": "You cant spectate yourself",
     "target_same_bucket": "Tried to place %s in the same bucket",
 
@@ -43,9 +41,6 @@
     "entered_vehicle": "Entered vehicle",
     "set_on_fire": "Person set on Fire :P",
     "explode_player": "Person was exploded :P",
-    "blips_activated": "Blips activated",
-    "names_activated": "Names activated",
-    "toggled_cuffs": "Toggled Cuffs",
     "vehicle_max_modded": "Vehicle has been max modded",
     "bucket_set_for_target": "Routing bucket set for: %s to bucket: %s",
     "bucket_set": "Routing set to bucket: %s",

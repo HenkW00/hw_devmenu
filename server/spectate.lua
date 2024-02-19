@@ -20,11 +20,9 @@ AddEventHandler('hw_devmenumenu:spectate', function(target, on, source, perms)
             TriggerClientEvent('hw_devmenumenu:cancelSpectate', source)
             spectating[source] = false
             FreezeEntityPosition(GetPlayerPed(source), false)
-            TriggerClientEvent('hw_devmenumenu:client:toggleNames', source, data)
         elseif on then
             TriggerClientEvent('hw_devmenumenu:requestSpectate', source, NetworkGetNetworkIdFromEntity(tPed), target, GetPlayerName(target))
             spectating[source] = true
-            TriggerClientEvent('hw_devmenumenu:client:toggleNames', source, data)
         end
     end
 end)

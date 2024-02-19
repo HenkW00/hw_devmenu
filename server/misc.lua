@@ -182,14 +182,3 @@ RegisterNetEvent('hw_devmenumenu:server:TakeMoney', function(data, selectedData)
     showNotification(src, locale((moneyType == "crypto" and "take_money_crypto" or "take_money"), tonumber(amount) .. "$", fullName), "success")
 end)
 
-
--- Toggle Cuffs
-RegisterNetEvent('hw_devmenumenu:server:CuffPlayer', function(data, selectedData)
-    if not CheckPerms(data.perms) then return end
-
-    local target = selectedData["Player"].value
-
-    TriggerClientEvent('hw_devmenumenu:client:ToggleCuffs', target)
-    showNotification(source, locale("toggled_cuffs"), 'success')
-end)
-
