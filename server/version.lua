@@ -100,6 +100,7 @@ AddEventHandler('onResourceStart', function(resourceName)
         return
     end
 
+
     local embed = {
         title = "Resource Started",
         description = string.format("**%s** has been started.", resourceName), 

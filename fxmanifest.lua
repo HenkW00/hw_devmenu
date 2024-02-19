@@ -1,23 +1,34 @@
 fx_version 'cerulean'
-game 'gta5'
 
-author 'HenkW' 
-description 'ESX Admin Performance Checker' 
-version '1.0.1' 
+game "gta5"
 
+author "Project Sloth & OK1ez"
+version '1.0.3'
+description 'Admin Menu'
+repository 'https://github.com/Project-Sloth/hw_devmenumenu'
 
-dependency 'es_extended'
+lua54 'yes'
 
-server_scripts {
-    'server/@es_extended/locale.lua', 
-    'server/config.lua', 
-    'server/server.lua' ,
-    'server/version.lua'
+ui_page 'html/index.html'
+-- ui_page 'http://localhost:5173/' --for dev
+
+client_script {
+  'client/**',
 }
 
-client_scripts {
-    'client/@es_extended/locale.lua', 
-    'client/config.lua',
-    'client/client.lua' 
+server_script {
+  "server/**",
+  "@oxmysql/lib/MySQL.lua",
 }
 
+shared_script {
+  '@ox_lib/init.lua',
+  "shared/**",
+}
+
+files {
+  'html/**',
+  'locales/*.json',
+}
+
+ox_lib 'locale' -- v3.8.0 or above

@@ -1,27 +1,13 @@
-local ESX
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end) -- ESX Legacy and some older versions
-if ESX == nil then TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end) end -- Fallback for very old versions
+lib.addCommand('devmenu', {
+    help = 'Open the admin dev menu',
+    restricted = 'qbcore.mod'
+}, function(source)
+    TriggerClientEvent('hw_devmenumenu:client:OpenUI', source)
+end)
 
--- Command registration compatible with both versions
-if ESX.RegisterCommand then
-    -- Newer ESX version
-    ESX.RegisterCommand('checkperf', 'admin', function(xPlayer, args, showError)
-        checkPerformance(xPlayer.source)
-    end, true, {help = 'Check server performance'})
-else
-    -- Fallback for older versions without ESX.RegisterCommand
-    TriggerEvent('es:addCommand', 'checkperf', function(source, args, user)
-        checkPerformance(source)
-    end)
+if Config.Framework == "ESX" then
+    ESX.RegisterCommand({'devmenu'}, Config.ModLevel, function(xPlayer, args, showError)
+        TriggerClientEvent('hw_devmenumenu:client:OpenUI', xPlayer.source)
+    end, false, {help = 'Open the admin dev menu'})
 end
-
-function checkPerformance(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer.getGroup() ~= 'user' then -- Check for admin or higher; adjust accordingly
-        local playerCount = #GetPlayers()
-        local uptime = GetGameTimer() / 3600000 -- Convert milliseconds to hours
-        TriggerClientEvent('hw_devmenu:showMenu', source, playerCount, uptime)
-    else
-        TriggerClientEvent('esx:showNotification', source, 'You do not have permission to use this command.')
-    end
-end
+-- Callbacks
