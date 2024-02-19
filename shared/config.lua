@@ -62,15 +62,6 @@ Config.Actions = {
         },
     },
 
-    ["clothing_menu"] = {
-        label = "Give Clothing Menu",
-        perms = "admin",
-        dropdown = {
-            { label = "Player", option = "dropdown", data = "players" },
-            { label = "Confirm", option = "button", type = "server", event = "hw_devmenumenu:server:ClothingMenu" },
-        },
-    },
-
     ["copy_coords"] = {
         label = "Copy Coords",
         perms = "admin",
@@ -118,13 +109,6 @@ Config.Actions = {
         label = "Invisible",
         type = "client",
         event = "hw_devmenumenu:client:ToggleInvisible",
-        perms = "admin",
-    },
-
-    ["blackout"] = {
-        label = "Toggle Blackout",
-        type = "server",
-        event = "hw_devmenumenu:server:ToggleBlackout",
         perms = "admin",
     },
 
@@ -178,15 +162,6 @@ Config.Actions = {
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "client", event = "hw_devmenumenu:client:openInventory" },
-        },
-    },
-
-    ["open_stash"] = {
-        label = "Open Stash",
-        perms = "admin",
-        dropdown = {
-            { label = "Stash",  option = "text" },
-            { label = "Confirm", option = "button",   type = "client", event = "hw_devmenumenu:client:openStash" },
         },
     },
 

@@ -24,11 +24,6 @@ RegisterNetEvent('hw_devmenumenu:server:OpenInv', function(data)
     exports.ox_inventory:forceOpenInventory(source, 'player', data)
 end)
 
--- Open Stash [ox side]
-RegisterNetEvent('hw_devmenumenu:server:OpenStash', function(data)
-    exports.ox_inventory:forceOpenInventory(source, 'stash', data)
-end)
-
 -- Give Item
 RegisterNetEvent('hw_devmenumenu:server:GiveItem', function(data, selectedData)
     if not CheckPerms(data.perms) then return end

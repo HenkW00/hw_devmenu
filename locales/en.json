@@ -60,7 +60,6 @@
     "playerbanned": "You have banned %s for %s with reason: %s",
     "reason": "Reason: ",
     "kicked": "You have been kicked!",
-    "blackout": "Blackout is %s",
     "not_enough_money": "Insufficient funds to remove money from the player",
     "ent_id": "Entity ID: ",
     "net_id": "Net ID: ",

@@ -193,20 +193,3 @@ RegisterNetEvent('hw_devmenumenu:server:CuffPlayer', function(data, selectedData
     showNotification(source, locale("toggled_cuffs"), 'success')
 end)
 
--- Give Clothing Menu
-RegisterNetEvent('hw_devmenumenu:server:ClothingMenu', function(data, selectedData)
-    if not CheckPerms(data.perms) then return end
-
-    local src = source
-    local target = tonumber(selectedData["Player"].value)
-
-    if target == nil then
-        return showNotification(src, locale("not_online"), 'error', 7500)
-    end
-
-    if target == src then
-        TriggerClientEvent("hw_devmenumenu:client:CloseUI", src)
-    end
-
-    TriggerClientEvent('qb-clothing:client:openMenu', target)
-end)
