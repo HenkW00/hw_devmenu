@@ -12,8 +12,9 @@ local godmode = false
 RegisterNetEvent('hw_devmenumenu:client:ToggleGodmode', function(data)
 	if not CheckPerms(data.perms) then return end
 	godmode = not godmode
-
+    
     if godmode then
+    if Config.Debug then
         showNotification(locale("godmode", "enabled"), 'primary')
         while godmode do
             Wait(0)
@@ -21,6 +22,7 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleGodmode', function(data)
         end
         SetPlayerInvincible(cache.playerId, false)
         showNotification(locale("godmode", "disabled"), 'primary')
+    end
     end
 end)
 

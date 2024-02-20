@@ -7,6 +7,7 @@ Config.Fuel = "LegacyFuel" -- "ps-fuel", "LegacyFuel"
 Config.ResourcePerms = 'admin' -- permission to control resource(start stop restart)
 Config.ModLevel = "admin" -- Used for menu command and admin chat
 Config.checkForUpdates = true -- Recommended to leave on "true"
+Config.Debug = true -- For debugging purposes
 
 Config.Actions = {
     ["ban_player"] = {
