@@ -13,6 +13,11 @@ RegisterNetEvent('hw_devmenumenu:client:TeleportToPlayer', function(coords)
 
     lastCoords = GetEntityCoords(cache.ped)
     SetPedCoordsKeepVehicle(cache.ped, coords.x, coords.y, coords.z)
+
+    if Config.Debug then
+        print("Teleported to: " .. tostring(lastCoords))
+    end
+
 end)
 
 -- Teleport to coords

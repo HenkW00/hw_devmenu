@@ -5,6 +5,11 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleInvisible', function(data)
 	visible = not visible
 
 	SetEntityVisible(cache.ped, visible, 0)
+
+    if Config.Debug then
+        print("Invincibility toggled: " .. tostring(visible))
+    end
+
 end)
 
 -- God Mode
@@ -14,7 +19,6 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleGodmode', function(data)
 	godmode = not godmode
     
     if godmode then
-    if Config.Debug then
         showNotification(locale("godmode", "enabled"), 'primary')
         while godmode do
             Wait(0)
@@ -23,7 +27,11 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleGodmode', function(data)
         SetPlayerInvincible(cache.playerId, false)
         showNotification(locale("godmode", "disabled"), 'primary')
     end
+
+    if Config.Debug then
+        print("Godmode toggled: " .. tostring(godmode))
     end
+
 end)
 
 -- Copy Coordinates
@@ -35,6 +43,11 @@ local function CopyCoords(data)
 
 	local values = {coords.x, coords.y, coords.z, heading}
 	lib.setClipboard(string.format(format, table.unpack(values, 1, #format)))
+
+    if Config.Debug then
+        print("Coordinates copied: " .. tostring(values))
+    end
+
 end
 
 RegisterCommand("vector2", function()
@@ -71,6 +84,11 @@ RegisterNetEvent('hw_devmenumenu:client:setInfiniteAmmo', function(data)
     end
 
     SetPedInfiniteAmmo(cache.ped, false, cache.weapon)
+
+    if Config.Debug then
+        print("Infinite Ammo toggled: " .. tostring(InfiniteAmmo))
+    end
+
 end)
 
 -- Toggle coords
@@ -94,4 +112,9 @@ RegisterNetEvent('hw_devmenumenu:client:ToggleCoords', function(data)
             --(string.format('~w~'..locale("ped_coords") .. '~b~ vector4(~w~%s~b~, ~w~%s~b~, ~w~%s~b~, ~w~%s~b~)', c.x, c.y, c.z, heading), 4, {66, 182, 245}, 0.4, x + 0.0, y + 0.0)
         end
     end)
+
+    if Config.Debug then
+        print("Coords toggled: " .. tostring(showCoords))
+    end
+
 end)

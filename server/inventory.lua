@@ -17,6 +17,11 @@ RegisterNetEvent('hw_devmenumenu:server:ClearInventory', function(data, selected
     end
     local fullName = getName(src)
     showNotification(src, locale("invcleared", fullName), 'success', 7500)
+
+    if Config.Debug then
+        print("Cleared inventory of: " .. tostring(Player))
+    end
+
 end)
 
 -- Open Inv [ox side]
@@ -40,6 +45,11 @@ RegisterNetEvent('hw_devmenumenu:server:GiveItem', function(data, selectedData)
     addItem(target,item,amount)
     local fullName = getName(target)
     showNotification(source, locale("give_item", tonumber(amount) .. " " .. item, fullName), "success", 7500)
+
+    if Config.Debug then
+        print("Gave: " ..tostring(amount) .. .. tostring(item) .. "to player: " ..tostring(Player))
+    end
+
 end)
 
 -- Give Item to All
@@ -60,4 +70,9 @@ RegisterNetEvent('hw_devmenumenu:server:GiveItemAll', function(data, selectedDat
         end
     end
     showNotification(src, locale("give_item_all", amount .. " " .. item), "success", 7500)
+
+    if Config.Debug then
+        print("Gave: " ..tostring(amount) .. .. tostring(item) .. "to all players!")
+    end
+
 end)

@@ -16,5 +16,10 @@ RegisterNetEvent("hw_devmenumenu:client:MutePlayer", function (data, selectedDat
     local playerId = selectedData["Player"].value
     if not playerId then return end
     exports["pma-voice"]:toggleMutePlayer(playerId)
+
+    if Config.Debug then
+        print("Player got muted: " .. tostring(playerId))
+    end
+
 end)
 

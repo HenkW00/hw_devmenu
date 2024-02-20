@@ -34,6 +34,11 @@ RegisterNetEvent('hw_devmenumenu:client:SpawnVehicle', function(data, selectedDa
     TaskWarpPedIntoVehicle(cache.ped, vehicle, -1)
     exports[Config.Fuel]:SetFuel(vehicle, 100.0)
     giveKeys(getPlates(vehicle))
+
+    if Config.Debug then
+        print("Spawned a vehicle: " .. tostring(vehicle))
+    end
+    
 end)
 
 -- Refuel Vehicle
@@ -46,6 +51,11 @@ RegisterNetEvent('hw_devmenumenu:client:RefuelVehicle', function(data)
     else
         showNotification(locale("not_in_vehicle"), 'error')
     end
+
+    if Config.Debug then
+        print("Refueled a vehicle")
+    end
+
 end)
 
 -- Change plate
@@ -74,6 +84,11 @@ RegisterNetEvent('hw_devmenumenu:client:ChangePlate', function(data, selectedDat
     else
         showNotification(locale("not_in_vehicle"), 'error')
     end
+
+    if Config.Debug then
+        print("Changed vehicle plate to: " .. tostring(currentPlate))
+    end
+
 end)
 
 
@@ -101,6 +116,11 @@ local function UpdateVehicleMenu()
             }
         })
     end
+
+    if Config.Debug then
+        print("Opened vehicle dev menu")
+    end
+    
 end
 
 RegisterNetEvent('hw_devmenumenu:client:ToggleVehDevMenu', function(data)
@@ -127,6 +147,11 @@ local function UpgradePerformance(vehicle)
     end
 
     showNotification(locale("vehicle_max_modded"), 'success', 7500)
+
+    if Config.Debug then
+        print("Gave max mods to vehicle")
+    end
+
 end
 
 
