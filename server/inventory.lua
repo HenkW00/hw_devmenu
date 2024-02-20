@@ -19,7 +19,7 @@ RegisterNetEvent('hw_devmenumenu:server:ClearInventory', function(data, selected
     showNotification(src, locale("invcleared", fullName), 'success', 7500)
 
     if Config.Debug then
-        print("Cleared inventory of: " .. tostring(Player))
+        print("^0[^1DEBUG^0]: ^5Cleared inventory of: ^3" .. fullName)
     end
 
 end)
@@ -47,7 +47,7 @@ RegisterNetEvent('hw_devmenumenu:server:GiveItem', function(data, selectedData)
     showNotification(source, locale("give_item", tonumber(amount) .. " " .. item, fullName), "success", 7500)
 
     if Config.Debug then
-        print("Gave: " ..tostring(amount) .. .. tostring(item) .. "to player: " ..tostring(Player))
+        print("^0[^1DEBUG^0]: ^5Gave the following item to a player: ^3" .. item .. " ^5Amount: ^3" .. amount)
     end
 
 end)
@@ -72,7 +72,7 @@ RegisterNetEvent('hw_devmenumenu:server:GiveItemAll', function(data, selectedDat
     showNotification(src, locale("give_item_all", amount .. " " .. item), "success", 7500)
 
     if Config.Debug then
-        print("Gave: " ..tostring(amount) .. .. tostring(item) .. "to all players!")
+        print("^0[^1DEBUG^0]: ^5Gave the following item to ALL players: ^3" .. item .. " ^5Amount: ^3" .. amount)
     end
 
 end)

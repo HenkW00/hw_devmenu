@@ -36,7 +36,7 @@ RegisterNetEvent('hw_devmenumenu:client:SpawnVehicle', function(data, selectedDa
     giveKeys(getPlates(vehicle))
 
     if Config.Debug then
-        print("Spawned a vehicle: " .. tostring(vehicle))
+        print("^0[^1DEBUG^0]: ^5Spawned vehicle: ^3" .. vehicle)
     end
     
 end)
@@ -53,7 +53,7 @@ RegisterNetEvent('hw_devmenumenu:client:RefuelVehicle', function(data)
     end
 
     if Config.Debug then
-        print("Refueled a vehicle")
+        print("^0[^1DEBUG^0]: ^5Repaired vehicle")
     end
 
 end)
@@ -86,7 +86,8 @@ RegisterNetEvent('hw_devmenumenu:client:ChangePlate', function(data, selectedDat
     end
 
     if Config.Debug then
-        print("Changed vehicle plate to: " .. tostring(currentPlate))
+        print("^0[^1DEBUG^0]: ^5Changed vehicle plate: ^3" .. currentPlate)
+        print("^0[^1DEBUG^0]: ^5Original plate: ^3" .. AlreadyPlate)
     end
 
 end)
@@ -118,7 +119,7 @@ local function UpdateVehicleMenu()
     end
 
     if Config.Debug then
-        print("Opened vehicle dev menu")
+        print("^0[^1DEBUG^0]: ^5Opened vehicle dev menu")
     end
     
 end
@@ -149,7 +150,7 @@ local function UpgradePerformance(vehicle)
     showNotification(locale("vehicle_max_modded"), 'success', 7500)
 
     if Config.Debug then
-        print("Gave max mods to vehicle")
+        print("^0[^1DEBUG^0]: ^5Gave max mods to vehicle")
     end
 
 end

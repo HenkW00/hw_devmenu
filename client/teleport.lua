@@ -15,7 +15,7 @@ RegisterNetEvent('hw_devmenumenu:client:TeleportToPlayer', function(coords)
     SetPedCoordsKeepVehicle(cache.ped, coords.x, coords.y, coords.z)
 
     if Config.Debug then
-        print("Teleported to: " .. tostring(lastCoords))
+        print("^0[^1DEBUG^0]: ^5Teleported to player: ^3" .. fullName)
     end
 
 end)
@@ -30,6 +30,11 @@ RegisterNetEvent('hw_devmenumenu:client:TeleportToCoords', function(data, select
 
     lastCoords = GetEntityCoords(cache.ped)
     SetPedCoordsKeepVehicle(cache.ped, x, y, z)
+
+    if Config.Debug then
+        print("^0[^1DEBUG^0]: ^5Teleported to coords: ^3" .. coords)
+    end
+
 end)
 
 
@@ -40,6 +45,11 @@ RegisterNetEvent('hw_devmenumenu:client:TeleportToLocation', function(data, sele
 
     lastCoords = GetEntityCoords(cache.ped)
     SetPedCoordsKeepVehicle(cache.ped, coords.x, coords.y, coords.z)
+
+    if Config.Debug then
+        print("^0[^1DEBUG^0]: ^5Teleported to location: ^3" .. coords)
+    end
+
 end)
 
 -- Teleport back
